@@ -5,12 +5,15 @@ REPO_URL=https://github.com/Making-Sense-Info/${REPO}.git
 cd /home/onyxia/work
 git clone $REPO_URL
 
+# Install dependencies
+[ -f $HOME/work/SPARQL-Jupyter-Training/requirements.txt ] && pip install -r $HOME/work/SPARQL-Jupyter-Training/requirements.txt
+
 # Clean
+cd ./SPARQL-Jupyter-Training
 rm LICENSE
 rm init-notebook.sh
-
-# Install dependencies
-[ -f $HOME/work/formation-spark/requirements.txt ] && pip install -r $HOME/work/formation-spark/requirements.txt
+rm README.md
+rm requirement.txt
 
 # Open the relevant notebook when starting Jupyter Lab
 jupyter server --generate-config
